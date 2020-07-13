@@ -1,4 +1,4 @@
-package wiki.micah.pandora.algorithm.solution;
+package wiki.micah.pandora.algorithm.solution.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;

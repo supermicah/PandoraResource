@@ -37,7 +37,6 @@ public class NodeUtil {
                 break;
             }
         }
-
     }
 
     private static Node reverse(Node head) {
