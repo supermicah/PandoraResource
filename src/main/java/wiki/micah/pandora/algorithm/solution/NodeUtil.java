@@ -27,8 +27,7 @@ public class NodeUtil {
             }
         }
 
-        Node newHead = reverse(a1);
-        temp = newHead;
+        temp = reverse1(a1);
         while (true) {
             System.out.println(temp.value);
             if (temp.next != null) {
@@ -47,6 +46,26 @@ public class NodeUtil {
         Node newHead = reverse(head.next);
         temp.next = head;
         head.next = null;
+        return newHead;
+    }
+
+    private static Node reverse1(Node head) {
+        Node needChange = head.next;
+        Node newHead = head;
+        while (needChange != null) {
+            if (needChange.next == null) {
+                needChange.next = newHead;
+                newHead = needChange;
+                head.next = null;
+                break;
+            } else {
+                Node temp = needChange.next;
+                needChange.next = newHead;
+                newHead.next = temp;
+                newHead = needChange;
+                needChange = temp;
+            }
+        }
         return newHead;
     }
 }
