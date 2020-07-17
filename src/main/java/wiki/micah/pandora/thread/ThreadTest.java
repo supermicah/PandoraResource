@@ -7,11 +7,23 @@ package wiki.micah.pandora.thread;
  */
 public class ThreadTest {
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getName());
-        aaa();
+        Thread t = new MyThread1();
+        t.start();
+        System.out.println("main is end");
+
+        // myThread Test
+//        Thread thread = new MyThread1();
+//        Thread t1 = new Thread(thread);
+//        Thread t2 = new Thread(thread);
+//        Thread t3 = new Thread(thread);
+//        Thread t4 = new Thread(thread);
+//        Thread t5 = new Thread(thread);
+//        t1.start();
+//        t2.start();
+//        t3.start();
+//        t4.start();
+//        t5.start();
     }
 
-    private static void aaa(){
-        System.out.println(Thread.currentThread().getName());
-    }
+
 }

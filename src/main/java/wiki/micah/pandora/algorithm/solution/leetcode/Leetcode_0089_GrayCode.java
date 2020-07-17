@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <a href="https://leetcode-cn.com/problems/gray-code/">力扣为算法89题</a>
+ * <a href="https://leetcode-cn.com/problems/gray-code/">格雷编码</a>
  *
  * @author micah
  * @version 0.0.1
  * @since 2020-07-12
  */
-public class GrayCode {
+public class Leetcode_0089_GrayCode {
     public static void main(String[] args) {
         System.out.println(gray1(3));
         System.out.println(gray1(4));

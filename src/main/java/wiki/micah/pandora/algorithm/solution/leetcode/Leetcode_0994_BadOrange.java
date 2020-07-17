@@ -4,14 +4,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * <a href="https://leetcode-cn.com/problems/rotting-oranges/">力扣为算法994题</a>
+ * <a href="https://leetcode-cn.com/problems/rotting-oranges/">腐烂的橘子力扣为算法994题</a>
  *
  * @author micah
  * @version 0.0.1
  * @since 2020-07-11
  */
 @SuppressWarnings("unused")
-public class BadOrange {
+public class Leetcode_0994_BadOrange {
 
     public static void main(String[] args) {
         // 全部感染，结果是4
