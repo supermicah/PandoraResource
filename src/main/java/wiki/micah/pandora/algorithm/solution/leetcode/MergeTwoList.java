@@ -1,5 +1,7 @@
 package wiki.micah.pandora.algorithm.solution.leetcode;
 
+import wiki.micah.pandora.algorithm.solution.leetcode.bean.ListNode;
+
 /**
  * @author micah
  * @version 0.0.1
@@ -30,7 +32,7 @@ public class MergeTwoList {
         ListNode result = mergeTwoList1(first, second);
         while (true) {
             if (result != null) {
-                System.out.println("list number：" + result.value);
+                System.out.println("list number：" + result.val);
                 result = result.next;
             } else {
                 break;
@@ -41,7 +43,7 @@ public class MergeTwoList {
          result = mergeTwoList2(first, second);
         while (true) {
             if (result != null) {
-                System.out.println("list number：" + result.value);
+                System.out.println("list number：" + result.val);
                 result = result.next;
             } else {
                 break;
@@ -58,7 +60,7 @@ public class MergeTwoList {
         if (second == null) {
             return first;
         }
-        if (first.value < second.value) {
+        if (first.val < second.val) {
             return merge2(first, second);
         } else {
             return merge2(second, first);
@@ -73,8 +75,8 @@ public class MergeTwoList {
                 first.next = second; // 这里要注意 直接接到另一个链表的当前表头即可
                 break;
             } else {
-                if (first.next.value >= second.value) {
-                    ListNode temp = new ListNode(second.value);
+                if (first.next.val >= second.val) {
+                    ListNode temp = new ListNode(second.val);
                     second = second.next;
                     temp.next = first.next;
                     first.next = temp;
@@ -93,7 +95,7 @@ public class MergeTwoList {
         if (second == null) {
             return first;
         }
-        if (first.value < second.value) {
+        if (first.val < second.val) {
             return merge1(first, second);
         } else {
             return merge1(second, first);
@@ -102,7 +104,7 @@ public class MergeTwoList {
     }
 
     private static ListNode merge1(ListNode first, ListNode second) {
-        ListNode head = new ListNode(first.value);
+        ListNode head = new ListNode(first.val);
         ListNode temp = head;
         first = first.next;
         while (true) {
@@ -115,34 +117,17 @@ public class MergeTwoList {
                 temp.next = first;
                 break;
             } else {
-                if (first.value <= second.value) {
-                    temp.next = new ListNode(first.value);
+                if (first.val <= second.val) {
+                    temp.next = new ListNode(first.val);
                     temp = temp.next;
                     first = first.next;
                 } else {
-                    temp.next = new ListNode(second.value);
+                    temp.next = new ListNode(second.val);
                     temp = temp.next;
                     second = second.next;
                 }
             }
         }
         return head;
-    }
-
-    static class ListNode {
-        public ListNode(int value) {
-            this.value = value;
-        }
-
-        ListNode next;
-        Integer value;
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "next=" + next +
-                    ", value=" + value +
-                    '}';
-        }
     }
 }
